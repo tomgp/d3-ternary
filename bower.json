@@ -1,12 +1,15 @@
 {
   "name": "d3-ternary",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "authors": [
     "Tom Pearson <tom.g.pearson@gmail.com>"
   ],
   "main": "ternary.js",
   "license": "MIT",
   "private": false,
+  "dependencies": {
+    "d3": ">= 3.4.0"
+  }
   "ignore": [
     "**/.*",
     "node_modules",
