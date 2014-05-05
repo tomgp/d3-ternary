@@ -1,7 +1,7 @@
 'use strict';
 
 if( !tgp ){ var tgp = {}; }
-if( !tgp.d3 ){ tgp.d3 = {};3
+if( !tgp.d3 ){ tgp.d3 = {};}
 
 tgp.d3.ternaryPlot = function(){
 	var ternary = {};
