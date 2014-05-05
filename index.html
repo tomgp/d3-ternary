@@ -1,0 +1,69 @@
+<html>
+<head>
+	<title>Ternary example</title>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="ternary.js"></script>
+<style type="text/css">
+.ternary-circle{
+	stroke:#c00;
+	fill:#fff;
+}
+
+.ternary-line{
+	fill:none;
+	stroke:#c00;
+}
+.ternary-tick{
+	fill:none;
+	stroke:#aaa;
+}
+
+.minor{
+	stroke:#fefefe;	
+}
+</style>
+</head>
+<body>
+
+</body>
+<script>
+var test_data = [
+	{a:100,b:0,c:0,color:'#F00'},
+	{a:0,b:100,c:0,color:'#0F0'},
+	{a:0,b:0,c:100,color:'#00F'},
+	{a:33,b:33,c:33,color:'#999'}
+];
+
+var svg = d3.select('body').append('svg').attr({ width:500, height:500 }),
+	axes = svg.append('g').attr('id','axes'),
+	plot = svg.append('g').attr('id','plot'),
+	myTernary = tgp.d3.ternaryPlot().range([0,400]),
+	myAxes = tgp.d3.ternaryAxes(myTernary);
+
+myAxes.ticks().minorTicks([d3.range(0,101,5)]).draw('#axes');
+
+
+plot.append('path').attr({
+		d:function(){ 
+			return myTernary.line(test_data, function(d){ return [d.a, d.b, d.c]; }, 'none')
+		},
+		'class':'ternary-line'
+	});
+
+plot.selectAll('circle')
+	.data(test_data)
+		.enter()
+		.append('circle')
+			.attr({
+				class:'ternary-circle',
+				r:4,
+				transform:function(d){
+					var point = myTernary.point([d.a, d.b, d.c]);
+					return ("translate(" + point[0] + ", " + point[1] + ")");
+				},
+				fill:function(d){ return d.color }
+			});
+
+
+</script>
+</html>

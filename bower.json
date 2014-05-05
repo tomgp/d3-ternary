@@ -1,0 +1,17 @@
+{
+  "name": "d3-ternary",
+  "version": "0.0.0",
+  "authors": [
+    "Tom Pearson <tom.g.pearson@gmail.com>"
+  ],
+  "main": "ternary.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
