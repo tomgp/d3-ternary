@@ -7,6 +7,10 @@
   "main": "ternary.js",
   "license": "MIT",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bower/bower.json-spec.git"
+  }
   "dependencies": {
     "d3": ">= 3.4.0"
   }
