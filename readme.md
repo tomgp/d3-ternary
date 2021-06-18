@@ -7,3 +7,5 @@ The two things
 2. An axis renderer which takes a _plot_ and draws a triangle with subdivisions. TO DO: add axis labels.
 
 Have  a look at index.html for example usage
+
+Note: Bower? who uses Bower anymore? I really should update this. 
